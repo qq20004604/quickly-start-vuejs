@@ -29,16 +29,14 @@
         <tr v-for="(val,key) in datas" v-if="val.year > yearLimit">
             <td>{{val.index}}</td>
             <td>{{val.name}}</td>
-            <td>{{val.year}}</td>
+            <td v-if="val.year<30">{{val.year}}</td>
+            <td v-else>年龄太大了，不告诉你喔</td>
         </tr>
     </table>
 </div>
 <script>
     new Vue({   //创建一个Vue的实例
         el: "#app", //挂载点是id="app"的地方
-        created: function () {
-//            this.changeProvince();
-        },
         data: {
             datas: [],
             yearLimit: 0
@@ -84,6 +82,7 @@
                     data.push(obj)
                 }
                 this.datas = data;
+                console.log(this.datas);
             },
             yearAbove20: function () {
                 this.yearLimit = 20;
