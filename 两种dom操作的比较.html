@@ -1,0 +1,723 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+<input type="button" onclick="doItByDirect()" value="直接插入"/>
+<input type="button" onclick="doItByRemove()" value="先移除结点再插入"/>
+<div id="abc"></div>
+<img src="./001.png" id="def"/>
+<div>
+    <main id="content">
+        <div class="center clear">
+
+
+            <!-- end is_zone -->
+
+
+            <div class="wiki-main-content" id="document-main" role="main">
+                <div class="center">
+
+                    <div class="article-meta">
+                        <!-- action buttons -->
+
+
+                        <ul class="page-buttons" data-sticky="false">
+
+                            <li>
+                                <button id="languages-menu" class="transparent" aria-haspopup="true"
+                                        aria-owns="languages-menu-submenu" aria-expanded="false"><span>语言</span><i
+                                        aria-hidden="true" class="icon-language"></i></button>
+
+                                <div class="submenu js-submenu" id="languages-menu-submenu">
+                                    <div class="submenu-column">
+                                        <ul id="translations">
+
+
+                                            <li>
+                                                <bdi><a rel="internal" href="/en-US/docs/Web/API/Node/insertBefore"
+                                                        title="英语 (美国)">English (US) (en-US)</a></bdi>
+                                            </li>
+
+                                            <li>
+                                                <bdi><a rel="internal" href="/es/docs/Web/API/Node/insertarAntes"
+                                                        title="西班牙语">Español (es)</a></bdi>
+                                            </li>
+
+                                            <li>
+                                                <bdi><a rel="internal" href="/fa/docs/Web/API/Node/insertBefore"
+                                                        title="波斯语">فارسی (fa)</a></bdi>
+                                            </li>
+
+                                            <li>
+                                                <bdi><a rel="internal" href="/fr/docs/Web/API/Node/insertBefore"
+                                                        title="法语">Français (fr)</a></bdi>
+                                            </li>
+
+                                            <li>
+                                                <bdi><a rel="internal" href="/ja/docs/Web/API/Node/insertBefore"
+                                                        title="日语">日本語 (ja)</a></bdi>
+                                            </li>
+
+                                            <li>
+                                                <bdi><a rel="internal" href="/pl/docs/Web/API/Element/insertBefore"
+                                                        title="波兰语">Polski (pl)</a></bdi>
+                                            </li>
+
+                                            <li>
+                                                <bdi><a rel="internal" href="/pt-BR/docs/Web/API/Node/insertBefore"
+                                                        title="葡萄牙语 (巴西)">Português (do&nbsp;Brasil) (pt-BR)</a></bdi>
+                                            </li>
+
+                                            <li>
+                                                <bdi><a rel="internal" href="/pt-PT/docs/DOM/element.insertBefore"
+                                                        title="葡萄牙语 (葡萄牙)">Português (Europeu) (pt-PT)</a></bdi>
+                                            </li>
+
+                                            <li>
+                                                <bdi><a rel="internal" href="/ru/docs/Web/API/Node/insertBefore"
+                                                        title="俄语">Русский (ru)</a></bdi>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="page-buttons-edit"><a href="/zh-CN/docs/Web/API/Node/insertBefore$edit"
+                                                             class="button" data-optimizely-hook="button-edit-doc"
+                                                             id="edit-button" rel="nofollow, noindex">编辑<i
+                                    aria-hidden="true" class="icon-pencil"></i></a></li>
+
+
+                            <li>
+                                <button id="advanced-menu" class="only-icon" aria-haspopup="true"
+                                        aria-owns="advanced-menu-submenu" aria-expanded="false"><span>高级</span><i
+                                        aria-hidden="true" class="icon-cog"></i></button>
+                                <div class="submenu js-submenu" id="advanced-menu-submenu">
+                                    <!-- this page -->
+                                    <div class="submenu-column">
+                                        <div class="title">高级</div>
+                                        <ul>
+                                            <li><a href="/zh-CN/docs/Web/API/Node/insertBefore$history"
+                                                   rel="nofollow, noindex">历史记录</a></li>
+
+
+                                            <li class="page-print"><a href="#"
+                                                                      onclick="return window.print();">打印此文章</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- crumbs -->
+
+                        <nav class="crumbs" role="navigation">
+                            <ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="面包屑导航">
+                                <li typeof="v:Breadcrumb"><a href="/zh-CN" rel="v:url" property="v:title">MDN</a></li>
+
+                                <li class="crumb" typeof="v:Breadcrumb"><a href="/zh-CN/docs/Web" rel="v:url"
+                                                                           property="v:title">Web 技术文档</a></li>
+
+                                <li class="crumb" typeof="v:Breadcrumb"><a href="/zh-CN/docs/Web/API" rel="v:url"
+                                                                           property="v:title">Web API 接口</a></li>
+
+                                <li class="crumb" typeof="v:Breadcrumb"><a href="/zh-CN/docs/Web/API/Node" rel="v:url"
+                                                                           property="v:title">Node</a></li>
+
+                                <li class="crumb" typeof="v:Breadcrumb" property="v:title">Node.insertBefore()</li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                    <!-- heading -->
+                    <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="前一个搜索结果" data-empty-title="没有更靠前的搜索结果"><i
+                    aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+                        <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true"
+                                                                                              class="icon-double-angle-up"></i></span><span
+                    class="from-search-navigate-down"><i aria-hidden="true"
+                                                         class="icon-double-angle-down"></i></span></a>
+          </span>
+                        <div class="from-search-toc submenu">
+                            <span class="title">您的搜索结果</span>
+                            <ol></ol>
+                        </div>
+                        <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="后一个搜索结果" data-empty-title="没有更靠前的搜索结果"><i
+                    aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+
+
+                        <div class="contributor-avatars" data-all-text="查看所有贡献者" data-alternate-message="隐藏贡献者">
+                            <ul>
+
+                                <li class="shown">
+                                    <a href="/zh-CN/profiles/stormtea123" title="查看个人资料：stormtea123">
+                                        <img src="https://secure.gravatar.com/avatar/1a8b4479e2fe9b2515c5f7a17c937c54?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png"
+                                             class="avatar loaded" height="34" width="34" alt="stormtea123"></a>
+                                </li>
+
+                                <li class="shown">
+                                    <a href="/zh-CN/profiles/helloguangxue" title="查看个人资料：helloguangxue">
+                                        <img src="https://secure.gravatar.com/avatar/be7718549b7727f411a46e9674de67e3?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png"
+                                             class="avatar loaded" height="34" width="34" alt="helloguangxue"></a>
+                                </li>
+
+                                <li class="shown">
+                                    <a href="/zh-CN/profiles/teoli" title="查看个人资料：teoli">
+                                        <img src="https://secure.gravatar.com/avatar/d0d90148e08e3b64ccf75c46f31442c5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png"
+                                             class="avatar loaded" height="34" width="34" alt="teoli"></a>
+                                </li>
+
+                                <li class="shown">
+                                    <a href="/zh-CN/profiles/ziyunfei" title="查看个人资料：ziyunfei">
+                                        <img src="https://secure.gravatar.com/avatar/2dbf9c055c2b32d3ca45d25be0117423?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png"
+                                             class="avatar loaded" height="34" width="34" alt="ziyunfei"></a>
+                                </li>
+
+                                <li class="shown">
+                                    <a href="/zh-CN/profiles/AlexChao" title="查看个人资料：AlexChao">
+                                        <img src="https://secure.gravatar.com/avatar/7d409f7ca9f450d094236a1e084dc368?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png"
+                                             class="avatar loaded" height="34" width="34" alt="AlexChao"></a>
+                                </li>
+
+                                <li class="shown">
+                                    <a href="/zh-CN/profiles/Josephok" title="查看个人资料：Josephok">
+                                        <img src="https://secure.gravatar.com/avatar/2897a99f6c2da8c8c2d61a33129fa6d9?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png"
+                                             class="avatar loaded" height="34" width="34" alt="Josephok"></a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                        <h1>
+                            <wbr>
+                            Node
+                            <wbr>
+                            .insert
+                            <wbr>
+                            Before()
+                        </h1>
+
+                    </div>
+
+
+                    <!-- start the main content container -->
+                    <div id="wiki-column-container" class="wiki-right-present wiki-left-present">
+
+                        <!-- content row with three strips -->
+                        <div class="column-container column-container-reverse">
+
+
+                            <!-- TOC, approvals, etc -->
+                            <div class="column-strip wiki-column" id="wiki-right">
+
+                                <!-- table of contents -->
+                                <div id="toc" class="toc toggleable" style="width: auto; max-height: none;">
+                                    <a href="#toc" class="title toggler" data-open-icon="icon-caret-right"
+                                       data-closed-icon="icon-caret-down" aria-haspopup="true">在本文章中<i
+                                            class="icon-caret-down"></i></a>
+                                    <ol class="toggle-container">
+                                        <li><a href="#Summary" rel="internal">概述</a></li>
+                                        <li><a href="#Syntax" rel="internal">语法</a></li>
+                                        <li><a href="#Example" rel="internal">示例 1</a></li>
+                                        <li><a href="#Example2" rel="internal">示例 2</a></li>
+                                        <li><a href="#Browser_Compatibility" rel="internal">浏览器兼容性</a></li>
+                                        <li><a href="#Specification" rel="internal">规范</a>
+                                        </li>
+                                    </ol>
+                                </div>
+
+                            </div>
+
+
+                            <!-- center: main article content -->
+                            <div id="wiki-content" class="column-half wiki-column text-content">
+
+
+                                <!-- just the article content -->
+                                <article id="wikiArticle">
+
+
+                                    <div>
+                                        <section id="Quick_Links" class="Quick_links"><!-- --></section>
+                                    </div>
+
+                                    <h2 name="Summary" id="Summary">概述</h2>
+
+                                    <p><code><strong>Node.insertBefore()</strong></code> 方法，在当前节点的某个子节点之前再插入一个子节点。</p>
+
+                                    <h2 name="Syntax" id="Syntax">语法</h2>
+
+                                    <pre class="syntaxbox">var <em>insertedElement</em> = <em>parentElement</em>.insertBefore(<em>newElement</em>, <em>referenceElement</em>);
+</pre>
+
+                                    <p>如果<code>referenceElement</code>为<code>null</code>则<code>newElement</code>将被插入到子节点的末尾<span
+                                            style="font-style: italic; line-height: inherit;">。</span>如果<code>newElement</code>已经在DOM树中，<code>newElement</code>首先会从DOM树中移除。
+                                    </p>
+
+                                    <ul>
+                                        <li><code>insertedElement</code>&nbsp;是被插入的节点，即&nbsp;<code>newElement</code>
+                                        </li>
+                                        <li><code>parentElement</code>&nbsp; 是新插入节点的父节点</li>
+                                        <li><code>newElement</code>&nbsp;是被插入的节点</li>
+                                        <li><code>referenceElement</code>&nbsp;在插入newElement之前的那个节点</li>
+                                    </ul>
+
+                                    <h2 name="Example" id="Example">示例 1</h2>
+
+                                    <pre class="brush:html line-numbers  language-html"><code
+                                            class=" language-html"><span class="token tag"><span class="token tag"><span
+                                            class="token punctuation">&lt;</span>div</span> <span
+                                            class="token attr-name">id</span><span class="token attr-value"><span
+                                            class="token punctuation">=</span><span class="token punctuation">"</span>parentElement<span
+                                            class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span
+          class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span
+          class="token punctuation">"</span>childElement<span class="token punctuation">"</span></span><span
+          class="token punctuation">&gt;</span></span>foo bar<span class="token tag"><span class="token tag"><span
+                                                class="token punctuation">&lt;/</span>span</span><span
+                                                class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span
+        class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span
+        class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token comment" spellcheck="true">// Create a new, plain &lt;span&gt; element</span>
+<span class="token keyword">var</span> sp1 <span class="token operator">=</span> document<span
+                                                class="token punctuation">.</span><span class="token function">createElement</span><span
+                                                class="token punctuation">(</span><span
+                                                class="token string">"span"</span><span
+                                                class="token punctuation">)</span><span
+                                                class="token punctuation">;</span>
+
+<span class="token comment"
+      spellcheck="true">// Get a reference to the element, before we want to insert the element</span>
+<span class="token keyword">var</span> sp2 <span class="token operator">=</span> document<span
+                                                class="token punctuation">.</span><span class="token function">getElementById</span><span
+                                                class="token punctuation">(</span><span class="token string">"childElement"</span><span
+                                                class="token punctuation">)</span><span
+                                                class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Get a reference to the parent element</span>
+<span class="token keyword">var</span> parentDiv <span class="token operator">=</span> sp2<span
+                                                class="token punctuation">.</span>parentNode<span
+                                                class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Insert the new element into the DOM before sp2</span>
+parentDiv<span class="token punctuation">.</span><span class="token function">insertBefore</span><span
+                                                class="token punctuation">(</span>sp1<span
+                                                class="token punctuation">,</span> sp2<span
+                                                class="token punctuation">)</span><span
+                                                class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span
+                                                class="token punctuation">&gt;</span></span><span
+                                                class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                                    <p>没有 <code>insertAfter</code> 方法。可以使用&nbsp;<code>insertBefore</code>
+                                        方法和&nbsp;<code><a href="/en-US/docs/DOM/Node.nextSibling"
+                                                          title="DOM/Node.nextSibling">nextSibling</a></code>&nbsp;来模拟它。
+                                    </p>
+
+                                    <p>在前一个例子中，可使用下面代码将&nbsp;<code>sp1</code> 插入到&nbsp;<code>sp2</code>&nbsp;后面：</p>
+
+                                    <pre><code>parentDiv.insertBefore(sp1, sp2.nextSibling);</code></pre>
+
+                                    <p>
+                                        如果&nbsp;<code>sp2</code>&nbsp;没有下一个节点，则它肯定是最后一个节点，则&nbsp;<code>sp2.nextSibling</code>&nbsp;返回&nbsp;<code>null</code>，且
+                                        <code>sp1</code>&nbsp;被插入到子节点列表的最后面（即&nbsp;<code>sp2</code>&nbsp;后面）。</p>
+
+                                    <h2 name="Example2" id="Example2">示例 2</h2>
+
+                                    <p>在第一个子元素的前面插入一个元素，可使用&nbsp;<a href="/en-US/docs/DOM/Node.firstChild"
+                                                                    title="Node.firstChild">firstChild</a>&nbsp;属性。</p>
+
+                                    <pre class="brush:js line-numbers  language-js"><code class=" language-js"><span
+                                            class="token comment" spellcheck="true">// Get a reference to the element in which we want to insert a new node</span>
+<span class="token keyword">var</span> parentElement <span class="token operator">=</span> document<span
+                                                class="token punctuation">.</span><span class="token function">getElementById</span><span
+                                                class="token punctuation">(</span><span class="token string">'parentElement'</span><span
+                                                class="token punctuation">)</span><span
+                                                class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Get a reference to the first child</span>
+<span class="token keyword">var</span> theFirstChild <span class="token operator">=</span> parentElement<span
+                                                class="token punctuation">.</span>firstChild<span
+                                                class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Create a new element</span>
+<span class="token keyword">var</span> newElement <span class="token operator">=</span> document<span
+                                                class="token punctuation">.</span><span class="token function">createElement</span><span
+                                                class="token punctuation">(</span><span
+                                                class="token string">"div"</span><span
+                                                class="token punctuation">)</span><span
+                                                class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Insert the new element before the first child</span>
+parentElement<span class="token punctuation">.</span><span class="token function">insertBefore</span><span
+                                                class="token punctuation">(</span>newElement<span
+                                                class="token punctuation">,</span> theFirstChild<span
+                                                class="token punctuation">)</span><span
+                                                class="token punctuation">;</span><span
+                                                class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                                    <p>当元素没有首节点时，<code>firstChild</code>&nbsp;返回&nbsp;<code>null</code>。该元素仍然会被插入到父元素中，位于最后一个节点后面。又由于父元素没有第一个子节点，也没有最后一个子节点。
+                                        最终，新元素成为唯一的子元素。</p>
+
+                                    <h2 name="Browser_Compatibility" id="Browser_Compatibility">浏览器兼容性</h2>
+
+                                    <p></p>
+                                    <div class="htab">
+                                        <a name="AutoCompatibilityTable" id="AutoCompatibilityTable"></a>
+                                        <ul>
+                                            <li class="selected"><a>Desktop</a></li>
+                                            <li><a>Mobile</a></li>
+                                        </ul>
+                                        <div id="compat-desktop" style="display: block;">
+                                            <table class="compat-table">
+                                                <tbody>
+                                                <tr>
+                                                    <th>Feature</th>
+                                                    <th>Chrome</th>
+                                                    <th>Firefox (Gecko)</th>
+                                                    <th>Internet Explorer</th>
+                                                    <th>Opera</th>
+                                                    <th>Safari (WebKit)</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Basic support</td>
+                                                    <td>1.0</td>
+                                                    <td><span
+                                                            title="Please update this with the earliest version of support."
+                                                            style="color: #888;">(Yes)</span></td>
+                                                    <td><span
+                                                            title="Please update this with the earliest version of support."
+                                                            style="color: #888;">(Yes)</span></td>
+                                                    <td><span
+                                                            title="Please update this with the earliest version of support."
+                                                            style="color: #888;">(Yes)</span></td>
+                                                    <td><span
+                                                            title="Please update this with the earliest version of support."
+                                                            style="color: #888;">(Yes)</span></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <p></p>
+
+
+                                    <h2 name="Specification" id="Specification">规范</h2>
+
+                                    <ul>
+                                        <li>
+                                            <a href="http://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113/core.html#ID-952280727"
+                                               class="external external-icon">insertBefore</a></li>
+                                    </ul>
+
+
+                                </article>
+
+
+                                <!-- contributors -->
+                                <div class="wiki-block contributors">
+                                    <h2 class="offscreen">文档标签和贡献者</h2>
+
+
+                                    <div class="tag-attach-list contributors-sub">
+                                        <i aria-hidden="true" class="icon-tags icon-fw"></i>
+                                        <strong>标签：</strong>&nbsp;
+                                        <ul class="tags tags-small">
+
+                                            <li><a href="/zh-CN/docs/tag/Method" rel="nofollow, noindex">Method</a></li>
+
+                                        </ul>
+                                    </div>
+
+
+                                    <div class="contributors-sub">
+                                        <i aria-hidden="true"
+                                           class="icon-group icon-fw"></i>&nbsp;<strong>此页面的贡献者：</strong>
+                                        <a href="/zh-CN/profiles/stormtea123">stormtea123</a>,
+
+                                        <a href="/zh-CN/profiles/helloguangxue">helloguangxue</a>,
+
+                                        <a href="/zh-CN/profiles/teoli">teoli</a>,
+
+                                        <a href="/zh-CN/profiles/ziyunfei">ziyunfei</a>,
+
+                                        <a href="/zh-CN/profiles/AlexChao">AlexChao</a>,
+
+                                        <a href="/zh-CN/profiles/Josephok">Josephok</a>
+
+                                    </div>
+
+
+                                    <div class="contributors-sub">
+                                        <i aria-hidden="true"
+                                           class="icon-clock-o icon-fw"></i>&nbsp;<strong>最后编辑者:</strong>
+                                        <a href="/zh-CN/profiles/stormtea123">stormtea123</a>,
+                                        <time datetime="2015-03-27T05:01:05-07:00">Mar 27, 2015, 5:01:05 AM</time>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="newsletter-box">
+                                    <div class="newsletter">
+                                        <form id="newsletterForm" name="newsletter-form" class="nodisable"
+                                              action="https://www.mozilla.org/en-US/newsletter/" method="post">
+                                            <h2 class="newsletter-teaser">学习 Web 开发的最佳实践</h2>
+                                            <p class="newsletter-description">注册我们的新闻报：</p>
+                                            <input type="hidden" id="fmt" name="fmt" value="H">
+                                            <input type="hidden" id="newsletterNewslettersInput" name="newsletters"
+                                                   value="app-dev">
+
+                                            <div id="newsletterErrors" class="newsletter-errors"></div>
+
+                                            <div id="newsletterEmail" class="form-group">
+                                                <label for="newsletterEmailInput"
+                                                       class="form-label offscreen">电子邮件地址</label>
+                                                <input type="email" id="newsletterEmailInput" name="email"
+                                                       class="form-input newsletter-input-email" required=""
+                                                       placeholder="you@example.com" size="30">
+                                            </div>
+
+                                            <div id="newsletterPrivacy" class="form-group form-group-agree hidden">
+                                                <input type="checkbox" id="newsletterPrivacyInput" name="privacy"
+                                                       required="">
+                                                <label for="newsletterPrivacyInput">
+                                                    我接受 Mozilla 按照<a href="https://www.mozilla.org/privacy/">隐私政策</a>所述的方式处理我的信息。
+                                                </label>
+                                            </div>
+                                            <div id="newsletterSubmit">
+                                                <button id="newsletter-submit" type="submit" class="button positive">
+                                                    立即注册
+                                                </button>
+                                            </div>
+
+                                            <p class="newsletter-lang">目前只能提供英文的新闻报。</p>
+
+                                        </form>
+                                        <div id="newsletterThanks" class="newsletter-thanks hidden">
+                                            <h2>谢谢！请检查您的收件箱以确认您的订阅。</h2>
+                                            <p>如果您以前未确认过订阅 Mozilla 相关的新闻简报，您可能必须这样做。请检查您的收件箱或垃圾邮件箱，找到我们发给您的电子邮件。
+                                            </p>
+                                        </div>
+                                        <button id="newsletterHide" type="button" class="only-icon newsletter-hide">
+                                            <span>隐藏新闻报注册</span><i aria-hidden="true" class="icon-times"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <!-- quick links and zone subnav strip -->
+                            <div id="wiki-left" class="column-strip wiki-column">
+
+
+                                <!-- quick links -->
+
+                                <div class="quick-links" id="quick-links">
+                                    <div class="title see-also">另见</div>
+                                    <ol>
+                                        <li><strong><a href="/zh-CN/docs/Web/API/Node"><code>Node</code></a></strong>
+                                        </li>
+                                        <li data-default-state="open" class="toggleable current" data-closed=""><a
+                                                href="#" class="toggler" aria-haspopup="true"><i aria-hidden="true"
+                                                                                                 class="icon-caret-down"></i><strong>属性</strong></a>
+                                            <ol class="toggle-container" aria-expanded="true" style="display: block;">
+                                                <li><a href="/zh-CN/docs/Web/API/Node/baseURI"
+                                                       title=""><code>baseURI</code></a></li>
+                                                <li><span class="sidebar-icon"><span
+                                                        title="This API has not been standardized."><i
+                                                        class="icon-warning-sign"> </i></span></span><a
+                                                        href="/zh-CN/docs/Web/API/Node/baseURIObject"
+                                                        title="baseURIObject属性返回一个代表当前节点(通常是文档节点或元素节点)的基URL的nsIURI对象.该属性类似与Node.baseURI,只是它返回的是一个包含更多信息的nsIURI对象,而不只是一个URL字符串."><code>baseURIObject</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/DOM/element.childNodes"
+                                                       title="childNodes  返回包含指定节点的子节点的集合."><code>childNodes</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/firstChild"
+                                                       title="返回当前节点在DOM树中的第一个子节点, 如果没有子节点,则返回 null."><code>firstChild</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/innerText"
+                                                       title="Node.innerText is a nonstandard property that represents the text content of a node and its descendants. As a getter, it approximates the text the user would get if they highlighted the contents of the element with the cursor and then copied to the clipboard."><code>innerText</code></a>
+                                                    <a href="/zh-CN/docs/Web/API/Node/innerText$translate"
+                                                       title="此页面仍未被本地化, 期待您的翻译!" style="opacity: 0.5;">[我来译!]</a></li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/lastChild"
+                                                       title="Node.lastChild&nbsp;是一个只读属性，返回当前节点的最后一个子节点。如果父节点为一个元素节点，则子节点通常为一个元素节点，或一个文本节点，或一个注释节点。如果没有子节点，则返回 null。"><code>lastChild</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/localName"
+                                                       title="Returns the local part of the qualified name of this node."><code>localName</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/nextSibling"
+                                                       title="Node.nextSibling&nbsp;是一个只读属性，返回其父节点的 childNodes 列表中紧跟在其后面的节点，如果指定的节点为最后一个节点，则返回 null。"><code>nextSibling</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/nodeName"
+                                                       title="返回当前节点的节点名称"><code>nodeName</code></a></li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/nodePrincipal" title=""><code>nodePrincipal</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/nodeType"
+                                                       title="这个只读属性&nbsp;Node.nodeType 表示的是该节点的类型。"><code>nodeType</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/nodeValue"
+                                                       title="获取或设置当前节点的值"><code>nodeValue</code></a></li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/outerText"
+                                                       title="Editorial review completed."><code>outerText</code></a> <a
+                                                        href="/zh-CN/docs/Web/API/Node/outerText$translate"
+                                                        title="此页面仍未被本地化, 期待您的翻译!" style="opacity: 0.5;">[我来译!]</a></li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/ownerDocument"
+                                                       title="ownerDocument属性返回当前节点所在的文档的文档节点."><code>ownerDocument</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/parentElement"
+                                                       title="返回当前节点的父元素节点,如果该元素没有父节点,或者父节点不是一个元素节点.则 返回null."><code>parentElement</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/parentNode"
+                                                       title="返回指定的节点在DOM树中的父节点."><code>parentNode</code></a></li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/prefix"
+                                                       title="prefix属性会返回当前节点的命名空间前缀,如果没有指定命名空间前缀,则返回null,该属性只读."><code>prefix</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/previousSibling"
+                                                       title="返回当前节点在其父节点的childNodes列表中的前一个节点,如果当前节点就是其父节点的第一个子节点,则返回null."><code>previousSibling</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/rootNode"
+                                                       title="The Node.rootNode read-only property returns a Node object representing the topmost node in the tree, or the current node if it's the topmost node in the tree. This is found by walking backward along Node.parentNode until the top is reached."><code>rootNode</code></a>
+                                                    <a href="/zh-CN/docs/Web/API/Node/rootNode$translate"
+                                                       title="此页面仍未被本地化, 期待您的翻译!" style="opacity: 0.5;">[我来译!]</a></li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/textContent"
+                                                       title="Node.textContent 属性可以表示一个节点及其后代节点的文本内容。"><code>textContent</code></a>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li data-default-state="open" class="toggleable current" data-closed=""><a
+                                                href="#" class="toggler" aria-haspopup="true"><i aria-hidden="true"
+                                                                                                 class="icon-caret-down"></i><strong>方法</strong></a>
+                                            <ol class="toggle-container" aria-expanded="true" style="display: block;">
+                                                <li><a href="/zh-CN/docs/Web/API/Node/appendChild"
+                                                       title="将一个节点插入到指定的父节点的最末尾处(也就是成为了这个父节点的最后一个子节点)."><code>appendChild</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/cloneNode"
+                                                       title="返回调用该方法的节点的一个副本."><code>cloneNode</code></a></li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/compareDocumentPosition"
+                                                       title="比较当前节点与任意文档中的另一个节点的位置关系."><code>compareDocumentPosition</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/contains"
+                                                       title="Node.contains()返回一个布尔值来表示是否传入的节点是，该节点的子节点。"><code>contains</code></a>
+                                                </li>
+                                                <li><span class="sidebar-icon"><span
+                                                        title="This is an obsolete API and is no longer guaranteed to work."><i
+                                                        class="icon-trash"> </i></span></span><s
+                                                        class="obsoleteElement"><a
+                                                        href="/zh-CN/docs/Web/API/Node/getUserData"
+                                                        title="The Node.getUserData() method returns any user DOMUserData set previously on the given node by Node.setUserData()."><code>getUserData()</code></a></s>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/hasChildNodes"
+                                                       title="hasChildNodes方法返回一个布尔值,表明当前节点是否包含有子节点."><code>hasChildNodes</code></a>
+                                                </li>
+                                                <li><em><code>insertBefore()</code></em></li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/isDefaultNamespace"
+                                                       title="isDefaultNamespace 接受一个命名空间URI作为参数,如果该命名空间是当前节点的默认命名空间,则返回true,否则返回false."><code>isDefaultNamespace</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/isEqualNode"
+                                                       title="判断两个节点对象是否相等."><code>isEqualNode</code></a></li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/isSameNode"
+                                                       title="判断两个节点是否是相同的节点,即指向同一个对象."><code>isSameNode</code></a></li>
+                                                <li><span class="sidebar-icon"><span
+                                                        title="This is an obsolete API and is no longer guaranteed to work."><i
+                                                        class="icon-trash"> </i></span></span><s
+                                                        class="obsoleteElement"><a
+                                                        href="/zh-CN/docs/Web/API/Node/isSupported"
+                                                        title="检测当前环境是否在某个节点上实现了指定的DOM特性."><code>isSupported</code></a></s>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/lookupNamespaceURI"
+                                                       title="返回当前节点上与指定命名空间前缀绑定的命名空间URI,如果没有,返回null,如果参数为null,返回默认的命名空间."><code>lookupNamespaceURI</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/lookupPrefix"
+                                                       title="返回一个和指定命名空间URI绑定的命名空间前缀.如果没有,返回null. 如果有多个绑定的前缀, 返回的结果根据浏览器实现而定."><code>lookupPrefix</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/normalize"
+                                                       title="Node.normalize() 方法将当前节点和它的后代节点”规范化“（normalized）。在一个&quot;规范化&quot;后的DOM树中，不存在一个空的文本节点，或者两个相邻的文本节点。"><code>normalize()</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/removeChild"
+                                                       title="从某个父节点中移除指定的子节点,并返回那个子节点."><code>removeChild</code></a>
+                                                </li>
+                                                <li><a href="/zh-CN/docs/Web/API/Node/replaceChild"
+                                                       title="用指定的节点替换当前节点的一个子节点，并返回被替换掉的节点。"><code>replaceChild</code></a>
+                                                </li>
+                                                <li><span class="sidebar-icon"><span
+                                                        title="This is an obsolete API and is no longer guaranteed to work."><i
+                                                        class="icon-trash"> </i></span></span><s
+                                                        class="obsoleteElement"><a
+                                                        href="/zh-CN/docs/Web/API/Node/setUserData"
+                                                        title="The Node.setUserData() method allows a user to attach (or remove) data to an element, without needing to modify the DOM. Note that such data will not be preserved when imported via Node.importNode, as with Node.cloneNode() and Node.renameNode() operations (though Node.adoptNode does preserve the information), and equality tests in Node.isEqualNode() do not consider user data in making the assessment."><code>setUserData()</code></a></s>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li data-default-state="open" class="toggleable current" data-closed=""><a
+                                                href="#" class="toggler" aria-haspopup="true"><i aria-hidden="true"
+                                                                                                 class="icon-caret-down"></i><strong>继承</strong></a>
+                                            <ol class="toggle-container" aria-expanded="true" style="display: block;">
+                                                <li>
+                                                    <a href="/zh-CN/docs/Web/API/EventTarget"><code>EventTarget</code></a>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </div>
+
+
+                                <!-- approvals -->
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ends "main-content" -->
+
+            <menu type="context" id="edit-history-menu">
+                <menuitem data-action="/zh-CN/docs/Web/API/Node/insertBefore$edit" label="编辑页面"></menuitem>
+                <menuitem data-action="/zh-CN/docs/Web/API/Node/insertBefore$history" label="查看页面历史"></menuitem>
+            </menu>
+
+        </div>
+    </main>
+</div>
+<script>
+    function doItByDirect() {
+        var root = document.getElementById("abc");
+        var t = new Date();
+        console.log("参考开始");
+        for (var i = 0; i < 100000; i++) {
+            var dom = document.createElement("div");
+            dom.innerHTML = i;
+            root.append(dom);
+        }
+        console.log("参考结束（该时间不准确，仅做参考，原因是js执行完后，html重排还没结束）：" + (new Date() - t));
+    }
+
+    function doItByRemove() {
+        var root = document.getElementById("abc");
+        var target = document.getElementsByTagName("body")[0];
+        var t = new Date();
+        console.log("参考开始");
+        root.remove();
+        for (var i = 0; i < 100000; i++) {
+            var dom = document.createElement("div");
+            dom.innerHTML = i;
+            root.append(dom);
+        }
+        target.insertBefore(root, document.getElementById("def"));
+        console.log("参考结束" + (new Date() - t));
+    }
+</script>
+</body>
+</html>

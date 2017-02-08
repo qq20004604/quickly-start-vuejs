@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input v-model="test"/>
+    {{test}}
+</div>
+<script>
+    new Vue({   //创建一个Vue的实例
+        el: "#app", //挂载点是id="app"的地方
+        data: {     //数据
+            test: "abc"     //变量test
+        }
+    })
+</script>
+</body>
+</html>

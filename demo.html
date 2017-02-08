@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>
+        点击按钮切换显示的图标
+    </p>
+    <input type="button" v-on:click="set1" v-if="data1" value="【一个图标】"/>
+    <input type="button" v-on:click="set1" v-if="!data1" value="另外一个图标"/>
+    <p>————————————————————————————</p>
+    <p>点击不同按钮决定显示什么</p>
+    <input type="button" @click="set2('baidu')" value="百度">
+    <input type="button" @click="set2('qq')" value="腾讯">
+    <input type="button" @click="set2('taobao')" value="淘宝">
+    <button @click="set2">什么都不显示</button>
+    <p>
+        <a href="http://www.baidu.com" target="_blank" v-if="data2=='baidu'">百度</a>
+        <a href="http://www.qq.com" target="_blank" v-if="data2=='qq'">腾讯</a>
+        <a href="http://www.taobao.com" target="_blank" v-if="data2=='taobao'">淘宝</a>
+    </p>
+    <p>————————————————————————————</p>
+    <p>
+        同类型dom，典型的是表格，类似的有li。<br>
+        <button @click="set3">点击添加内容</button>
+    </p>
+    <ul>
+        <li v-for="i in data3">{{i}}</li>
+    </ul>
+</div>
+<script>
+    new Vue({   //创建一个Vue的实例
+        el: "#app", //挂载点是id="app"的地方
+        data: {
+            data1: true,
+            data2: "",
+            data3: [1]
+        },
+        methods: {
+            set1: function () {
+                this.data1 = !this.data1;
+            },
+            set2: function (arg) {
+                this.data2 = arg;
+            },
+            set3: function (arg) {
+                this.data3.push(this.data3.length + 1);
+            }
+        }
+    })
+</script>
+</body>
+</html>

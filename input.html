@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>
+        邮箱：<input v-model="mail"/>
+    </p>
+    <p>
+        设置密码：<input type="password" v-model="pw"/>
+    </p>
+    <p>
+        官方注册微博名：<input v-model="name" placeholder="请参考组织/企业/品牌名称"/>
+    </p>
+    <p>
+        所在地：
+        <select v-model="province">
+            <option value="zhejiang">浙江</option>
+            <option value="shanghai">上海</option>
+        </select>
+        <select v-model="city">
+            <option v-for="(val,key) in citys" v-bind:value="key">{{val}}</option>
+        </select>
+    </p>
+    <p>
+        验证码：
+        <input v-model="verificationCode">
+        请输入：1234
+    </p>
+    <p>
+        <input type="button" v-on:click="check" value="提交"/>
+        <input type="button" v-on:click="inputDefault" value="默认值"/>
+    </p>
+    <p style="color:green" v-if="error=='success'">提交成功</p>
+    <p style="color:red" v-if="error=='less'">缺少内容</p>
+    <p style="color:red" v-if="error=='VerificationCode'">验证码错误</p>
+</div>
+<script>
+    new Vue({   //创建一个Vue的实例
+        el: "#app", //挂载点是id="app"的地方
+        created: function () {
+            this.changeProvince();
+        },
+        data: {     //数据
+            province: "zhejiang",
+            mail: "",
+            pw: "",
+            name: "",
+            city: "",
+            citys: {},
+            provinceWithCity: {
+                zhejiang: {
+                    hangzhou: "杭州",
+                    shaoxing: "绍兴"
+                },
+                shanghai: {
+                    pudong: "浦东区",
+                    jingan: "静安区"
+                }
+            },
+            verificationCode: "",
+            error: ""
+        },
+        methods: {
+            changeProvince: function () {
+                this.citys = this.provinceWithCity['zhejiang'];
+                this.$watch('province', function (newVal, oldVal) {
+                    this.citys = this.provinceWithCity[newVal];
+                })
+            },
+            check: function () {    //提交内容检查
+                if (this.mail && this.pw && this.name && this.province && this.city) {
+                    if (this.verificationCode === '1234') {
+                        this.error = 'success';
+                        console.log([this.mail, this.pw, this.name, this.province, this.city]);
+                    } else {
+                        this.error = 'VerificationCode'
+                    }
+                } else {
+                    this.error = 'less';
+                }
+            },
+            inputDefault: function () {
+                this.mail = '123@qq.com';
+                this.pw = '123';
+                this.name = 'abc';
+                this.province = 'zhejiang';
+                this.city = 'hangzhou';
+                this.verificationCode = '1234';
+            }
+        }
+    })
+</script>
+</body>
+</html>
